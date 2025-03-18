@@ -36,7 +36,7 @@ export const loginUser = async (req, res) => {
         }
         const token = jwt.sign({ userId: user._id }, process.env.SECRET_KEY, { expiresIn: '1d' });
         
-        res.status(200).json({ message: 'Login successful', token, user: { id: user._id, name: user.name, email: user.email } });
+        res.status(200).json({ message: 'Login done', token, user: { id: user._id, name: user.name, email: user.email } });
     }
     catch (error) {
         res.status(500).json({ message: 'Server error' });
