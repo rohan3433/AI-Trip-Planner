@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from "cors";
 import userRoutes from './routes/UserRoutes.js';
+import tripRoutes from "./routes/TripRoutes.js";
 
 dotenv.config();
 const app = express();
@@ -23,6 +24,8 @@ app.post("/test", (req, res) => {
 
 
 app.use("/api/users", userRoutes);
+
+app.use("/api/trips", tripRoutes);
 
 
 
